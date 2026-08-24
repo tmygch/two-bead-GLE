@@ -1,0 +1,116 @@
+#+TITLE: Toy6 GLE
+
+Simulation and theoretical-analysis codes for the six-bead elastic-network example in
+
+*Exact Generalized Langevin Dynamics of Pair Coordinates in Elastic Networks*
+
+This repository contains the code used to study the memory kernel of a tagged bead pair in the six-bead network shown in the manuscript.
+
+* Files
+
+- =toy6.cpp=
+  Brownian-dynamics simulation of the six-bead elastic network and numerical estimation of the memory kernel.
+
+- =run.py=
+  Runs the simulation for the tagged pairs used in the manuscript.
+
+- =theory_toy6.py=
+  Calculates the exact memory kernel from the matrix expression derived in the manuscript.
+
+* Requirements
+
+** C++ simulation
+
+- C++17-compatible compiler
+- Tested with =g++=
+
+** Theoretical calculation
+
+- Python 3
+- NumPy
+- SciPy
+
+For example,
+
+#+BEGIN_SRC bash
+python3 -m pip install numpy scipy
+#+END_SRC
+
+* Simulation
+
+Compile one tagged-pair case as
+
+#+BEGIN_SRC bash
+g++ -O3 -std=c++17 -DMMM1=0 -o TN=0.out toy6.cpp
+#+END_SRC
+
+and run it as
+
+#+BEGIN_SRC bash
+./TN=0.out > a.dat
+#+END_SRC
+
+Alternatively, run all tagged-pair cases used for the six-bead example with
+
+#+BEGIN_SRC bash
+python3 run.py
+#+END_SRC
+
+The run script creates separate directories for each calculation and copies the C++ source file into each directory before compilation.
+
+* Theoretical memory kernel
+
+For the tagged pair \((i,j)=(2,6)\), run
+
+#+BEGIN_SRC bash
+python3 theory_toy6.py
+#+END_SRC
+
+The script evaluates the exact memory kernel
+
+\[
+\mu(t)
+=
+\frac{k}{\gamma}
+\tilde{\mathbf l}'_{i\bullet}
+\exp\!\left[-\frac{k}{\gamma}\tilde L' t\right]
+(\tilde L')^{-}
+\tilde{\mathbf l}'_{\bullet i},
+\]
+
+where \((\tilde L')^{-}\) is the generalized inverse used in the manuscript.
+
+The script also checks numerically that
+
+\[
+\tilde L'(\tilde L')^{-}\tilde L'=\tilde L',
+\qquad
+(\tilde L')^{-}\tilde L'(\tilde L')^{-}=(\tilde L')^{-}.
+\]
+
+The calculated data are written to files such as
+
+#+BEGIN_EXAMPLE
+Toy6_N6_mu(t)_i002_j006_genth.dat
+Toy6_N6_mu(s)_i002_j006_genth.dat
+#+END_EXAMPLE
+
+These data can be plotted with any plotting program; no plotting package is required by the script.
+
+* Reproducibility note
+
+The original simulations were performed with the Numerical Recipes random-number routines =ran2= and =gasdev=.
+
+These routines are not redistributed in this repository. For public release, the simulation code uses the C++ standard-library random-number generator instead. Therefore, trajectories generated from the same nominal seed are not bitwise identical to those of the original simulations, although the stochastic model and simulation procedure are unchanged.
+
+* License
+
+A license will be added before the public release.
+
+* Citation
+
+If you use this code, please cite the corresponding paper:
+
+#+BEGIN_QUOTE
+T. Miyaguchi et al., “Exact Generalized Langevin Dynamics of Pair Coordinates in Elastic Networks.”
+#+END_QUOTE

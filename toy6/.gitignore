@@ -1,0 +1,5 @@
+*.out
+a.dat
+N6_TAG*/
+__pycache__/
+*.pyc

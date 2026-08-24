@@ -1,0 +1,9 @@
+#+TITLE: Two-bead generalized Langevin dynamics in elastic networks
+
+Codes accompanying the manuscript
+
+*Exact Generalized Langevin Dynamics of Pair Coordinates in Elastic Networks*
+
+* Contents
+
+- [[file:toy6/][toy6]] :: Six-bead elastic-network simulation and exact theoretical kernel.
