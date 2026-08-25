@@ -68,7 +68,7 @@ The run script creates a separate directory for each calculation and copies the 
 
 ## Exact theoretical memory kernel
 
-For the tagged pair $(i,j)=(2,6)$, run
+For the tagged pair (i, j) = (2, 6), run
 
 ```bash
 python3 theory_toy6.py
@@ -76,7 +76,7 @@ python3 theory_toy6.py
 
 The script evaluates
 
-$$
+```math
 \mu(t)
 =
 \frac{k}{\gamma}
@@ -86,25 +86,25 @@ $$
 \right]
 (\tilde L')^{-}
 \tilde{\mathbf l}'_{\bullet i}.
-$$
+```
 
-Here $(\tilde L')^{-}$ denotes the generalized inverse used in the manuscript.
+Here the superscript minus denotes the generalized inverse used in the manuscript.
 
 The script also checks numerically that
 
-$$
+```math
 \tilde L'(\tilde L')^{-}\tilde L'
 =
 \tilde L',
-$$
+```
 
 and
 
-$$
+```math
 (\tilde L')^{-}\tilde L'(\tilde L')^{-}
 =
 (\tilde L')^{-}.
-$$
+```
 
 The calculated data are written to files such as
 
