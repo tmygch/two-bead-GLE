@@ -11,7 +11,7 @@ set tics scale 0.7,0.3
 set xlabel "time"
 set ylabel "memory kernel"
 
-set key at graph -0.07,0.60
+set key at graph 0.35,0.60
 set key spacing 1.3 width 0.0
 set key samplen 2
 
