@@ -79,32 +79,13 @@ The script evaluates
 ```math
 \mu(t)
 =
-\frac{k}{\gamma}
-\tilde{\mathbf l}'_{i\bullet}
-\exp\!\left[
--\frac{k}{\gamma}\tilde L' t
-\right]
-(\tilde L')^{-}
-\tilde{\mathbf l}'_{\bullet i}.
+\tilde{\mathbf l}{}'_{i\bullet}
+e^{-\tilde L' t}
+(\tilde L{}')^{-}
+\tilde{\mathbf l}{}'_{\bullet i}.
 ```
 
 Here the superscript minus denotes the generalized inverse used in the manuscript.
-
-The script also checks numerically that
-
-```math
-\tilde L'(\tilde L')^{-}\tilde L'
-=
-\tilde L',
-```
-
-and
-
-```math
-(\tilde L')^{-}\tilde L'(\tilde L')^{-}
-=
-(\tilde L')^{-}.
-```
 
 The calculated data are written to files such as
 
