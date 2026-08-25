@@ -80,8 +80,8 @@ The script evaluates
 \mu(t)
 =
 \tilde{\mathbf l}{}'_{i\bullet}
-e^{-\tilde L' t}
-(\tilde L{}')^{-}
+e^{-\tilde L{}' t}
+\tilde L{}'^{-}
 \tilde{\mathbf l}{}'_{\bullet i}.
 ```
 
