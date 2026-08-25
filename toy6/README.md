@@ -25,6 +25,9 @@ The network is
 - `theory_toy6.py`  
   Calculates the exact memory kernel from the matrix expression derived in the manuscript.
 
+- `plot_toy6.gp`  
+  Gnuplot script for plotting the simulation and theoretical memory kernels shown in the main-text figure.
+  
 ## Requirements
 
 ### Simulation
@@ -95,7 +98,7 @@ Toy6_N6_mu(t)_i002_j006_genth.dat
 Toy6_N6_mu(s)_i002_j006_genth.dat
 ```
 
-No plotting package is required. The figures in the manuscript were prepared separately.
+![Comparison of simulation and theory for the Toy6 model](toy6_mu_t.png)
 
 ## Reproducibility note
 
