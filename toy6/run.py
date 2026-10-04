@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-cfile = "toy6_github.cpp"
+cfile = "toy6.cpp"
 
 for tn1 in [0, 1, 4]:
 

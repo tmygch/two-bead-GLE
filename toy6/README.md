@@ -22,10 +22,10 @@ The network is
 - `run.py`  
   Runs the tagged-pair cases used for the six-bead example.
 
-- `theory_toy6.py`  
+- `theory.py`  
   Calculates the exact memory kernel from the matrix expression derived in the manuscript.
 
-- `plot_toy6.gp`  
+- `plot.gp`  
   Gnuplot script for plotting the simulation and theoretical memory kernels shown in the main-text figure.
   
 ## Requirements
@@ -49,24 +49,11 @@ python3 -m pip install numpy scipy
 
 ## Simulation
 
-For a single tagged-pair case, compile with
-
-```bash
-g++ -O3 -std=c++17 -DMMM1=0 -o TN=0.out toy6.cpp
-```
-
-and run with
-
-```bash
-./TN=0.out > a.dat
-```
-
-Alternatively, run the tagged-pair cases used in the main-text example with
+Run the tagged-pair cases used in the main-text example with
 
 ```bash
 python3 run.py
 ```
-
 The run script creates a separate directory for each calculation and copies the C++ source file into that directory before compilation.
 
 ## Exact theoretical memory kernel
@@ -74,9 +61,8 @@ The run script creates a separate directory for each calculation and copies the 
 For the tagged pair (i, j) = (2, 6), run
 
 ```bash
-python3 theory_toy6.py
+python3 theory.py
 ```
-
 The script evaluates
 
 ```math
@@ -97,6 +83,22 @@ The calculated data are written to files such as
 Toy6_N6_mu(t)_i002_j006_genth.dat
 Toy6_N6_mu(s)_i002_j006_genth.dat
 ```
+
+## Plotting Fig. 2(a)
+
+To generate the theoretical data for the three tagged pairs, run:
+
+```bash
+python3 theory.py --i 1 --j 6
+python3 theory.py --i 2 --j 6
+python3 theory.py --i 5 --j 6
+```
+Then generate the figure with gnuplot:
+
+```bash
+gnuplot plot.gp
+```
+This produces `toy6_mu_t.png`.
 
 ![Comparison of simulation and theory for the Toy6 model](toy6_mu_t.png)
 

@@ -1,7 +1,6 @@
-set terminal pngcairo size 900,700 enhanced
+set terminal pngcairo size 500,400 enhanced
 set output "toy6_mu_t.png"
 
-set size 0.62,0.62
 unset grid
 set logscale
 
@@ -11,8 +10,8 @@ set tics scale 0.7,0.3
 set xlabel "time"
 set ylabel "memory kernel"
 
-set key at graph 0.35,0.60
-set key spacing 1.3 width 0.0
+set key at graph 0.39,0.60
+set key spacing 1.15 width 0.0
 set key samplen 2
 
 set format x "10^{%L}"
