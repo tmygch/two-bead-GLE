@@ -5,7 +5,7 @@ cfile = "toy6.cpp"
 for tn1 in [0, 1, 4]:
 
     dirname = f"N6_TAG{tn1}_5"
-    os.mkdir(dirname)           # make directory
+    os.makedirs(dirname, exist_ok=True) # make directory
 
     cmd = f"cp {cfile} {dirname}/"
     os.system(cmd)              # copy source code
